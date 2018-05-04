@@ -20,7 +20,7 @@ class WebLogApplication(@Autowired private val service: WebLogService) : Applica
 
             try {
                 val folder = File(directory).listFiles().toList()
-                val threshold = time.replace("m", " ")
+                val threshold = time.replace("m", "")
 
                 service.readLog(threshold, folder).map {
                     val ipAddress = it.ipAddress
